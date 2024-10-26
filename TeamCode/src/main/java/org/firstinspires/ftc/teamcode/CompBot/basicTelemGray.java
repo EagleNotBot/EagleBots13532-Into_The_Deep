@@ -34,8 +34,8 @@ public class basicTelemGray extends LinearOpMode {
 
     // In case builders are bad, is offset center for servo
     double FLServoOffSet = -.005;    //0.00
-    double FRServoOffSet = .00;     //0.00
-    double BLServoOffSet = .01;     //0.01
+    double FRServoOffSet = .00;      //0.00
+    double BLServoOffSet = .01;      //0.01
     double BRServoOffSet = .045;     //.007
 
 

@@ -1,3 +1,4 @@
+
 package org.firstinspires.ftc.teamcode.CompBot;
 
 import static com.qualcomm.robotcore.hardware.DcMotor.RunMode.RUN_USING_ENCODER;
@@ -13,7 +14,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.ODO.GoBildaPinpointDriver;
 
-@TeleOp(name = "basic telemetry for blue robot", group = "CompBot")
+@TeleOp(name = "basic telemetry for gray robot", group = "CompBot")
 public class basicTelemBlue extends LinearOpMode {
     /*
     The point of this code is to be a basic telem that works for thursday
@@ -32,11 +33,11 @@ public class basicTelemBlue extends LinearOpMode {
     ElapsedTime turnTime = new ElapsedTime();
 
 
-    // In case builders are bad, is offset center for servo
-    double FLServoOffSet = -.005;    //0.00
-    double FRServoOffSet = .00;     //0.00
-    double BLServoOffSet = .01;     //0.01
-    double BRServoOffSet = .045;     //.007
+    // In case we need to add it later, but servos only have 180° so have to be perfectly placed
+    double FLServoOffSet = .00;
+    double FRServoOffSet = .00;
+    double BLServoOffSet = .00;
+    double BRServoOffSet = .00;
 
 
     static double TRACKWIDTH = 14;      //in inches
@@ -177,15 +178,15 @@ public class basicTelemBlue extends LinearOpMode {
 
         // Sets the ends of the servos. Hover cursor over function for more info
         // Will need to be tuned later
-        FLServo.scaleRange(FLServoOffSet, 1.0 + FLServoOffSet * 2);
-        BLServo.scaleRange(BLServoOffSet, 1.0 + BLServoOffSet * 2);
-        FRServo.scaleRange(FRServoOffSet, 1.0 + FRServoOffSet * 2);
-        BRServo.scaleRange(BRServoOffSet, 1.0 + BRServoOffSet * 2);
+        FLServo.scaleRange(0, 1.0);
+        BLServo.scaleRange(0, 1.0);
+        FRServo.scaleRange(0, 1.0);
+        BRServo.scaleRange(0, 1.0);
 
-        FLServo.setPosition(0.50 + FLServoOffSet);
-        BLServo.setPosition(0.50 + BLServoOffSet);
-        FRServo.setPosition(0.50 + FRServoOffSet);
-        BRServo.setPosition(0.50 + BRServoOffSet);
+        FLServo.setPosition(0.50);
+        BLServo.setPosition(0.50);
+        FRServo.setPosition(0.50);
+        BRServo.setPosition(0.50);
 
 
         // Init GoBilda Pinpoint module
@@ -274,10 +275,10 @@ public class basicTelemBlue extends LinearOpMode {
      */
     public void forwardBackward(double power) {
 
-        FLServo.setPosition(0.5+FLServoOffSet);
-        FRServo.setPosition(0.5+FRServoOffSet);
-        BLServo.setPosition(0.5+BLServoOffSet);
-        BRServo.setPosition(0.5+BRServoOffSet);
+        FLServo.setPosition(0.5);
+        FRServo.setPosition(0.5);
+        BLServo.setPosition(0.5);
+        BRServo.setPosition(0.5);
 
         FLMotor.setPower(power);
         BLMotor.setPower(power);
