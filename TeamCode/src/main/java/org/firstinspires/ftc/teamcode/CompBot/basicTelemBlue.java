@@ -17,10 +17,8 @@ import org.firstinspires.ftc.teamcode.ODO.GoBildaPinpointDriver;
 @TeleOp(name = "basic telemetry for gray robot", group = "CompBot")
 public class basicTelemBlue extends LinearOpMode {
     /*
-    The point of this code is to be a basic telem that works for thursday
-    using different classes already made and is not tested as of creation 10/21/24
-    date last updated and tested: 10/21/24
-    uses clawSlideImport and permaIntake
+    The point of this code is to be a basic telem that works for the blue robot
+    date last updated and tested:
     */
 
     DcMotor FLMotor, BLMotor, BRMotor, FRMotor, pivot, slide;
