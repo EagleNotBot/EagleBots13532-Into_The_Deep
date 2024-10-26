@@ -294,13 +294,10 @@ public class basicTelemBlue extends LinearOpMode {
     public void rotate(double power) {
 
         // Set wheels for rotation
-        double x = .75 + .125 / 2;
-        FLServo.setPosition(.55);
-        BLServo.setPosition(.45);
-        BRServo.setPosition(.60);
-        FRServo.setPosition(.45);
-
-        telemetry.addData("data: ",x);
+        FLServo.setPosition(.80);
+        BLServo.setPosition(.20);
+        BRServo.setPosition(.80);
+        FRServo.setPosition(.20);
 
         //turn motors to rotate robot
         FLMotor.setPower(power);
