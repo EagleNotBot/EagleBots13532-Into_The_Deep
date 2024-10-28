@@ -14,7 +14,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.ODO.GoBildaPinpointDriver;
 
-@TeleOp(name = "basic telemetry for gray robot", group = "CompBot")
+@TeleOp(name = "basic telemetry for blue robot", group = "CompBot")
 public class basicTelemBlue extends LinearOpMode {
     /*
     The point of this code is to be a basic telem that works for the blue robot

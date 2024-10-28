@@ -161,8 +161,8 @@ public class basicTelemGray extends LinearOpMode {
         FRMotor.setZeroPowerBehavior(BRAKE);
         BRMotor.setZeroPowerBehavior(BRAKE);
 
-        FLMotor.setDirection(FORWARD);
-        BLMotor.setDirection(FORWARD);
+        FLMotor.setDirection(REVERSE);
+        BLMotor.setDirection(REVERSE);
         FRMotor.setDirection(FORWARD);
         BRMotor.setDirection(REVERSE);
 
