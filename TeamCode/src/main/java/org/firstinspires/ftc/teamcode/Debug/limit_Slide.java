@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.DigitalChannel;
 
 @TeleOp
 public class limit_Slide extends LinearOpMode {
@@ -16,6 +17,8 @@ public class limit_Slide extends LinearOpMode {
     Servo intakeL, intakeR;
 
     int limitSlide, limitPivot;
+
+    private DigitalChannel limitSwitch;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -68,6 +71,10 @@ public class limit_Slide extends LinearOpMode {
 
         intakeL.setDirection(Servo.Direction.REVERSE);
         intakeR.setDirection(Servo.Direction.REVERSE);
+
+        //limit switch and brings pivot back
+
+        limitSwitch = hardwareMap.get(DigitalChannel.class, "limit_switch");
     }
 
     public void setSlide(double x) {
