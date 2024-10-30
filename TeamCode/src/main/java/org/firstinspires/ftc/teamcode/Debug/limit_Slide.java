@@ -39,8 +39,6 @@ public class limit_Slide extends LinearOpMode {
 
             setSlide(-gamepad2.right_stick_y);
             setPivot(-gamepad2.left_stick_y);
-            telemetry.addData("SL", slideLimit.getState());
-            telemetry.update();
         }
     }
 
@@ -84,6 +82,7 @@ public class limit_Slide extends LinearOpMode {
         } else if (slide.getCurrentPosition() <= -limitSlide && x < 0) {
             x = 0;
         }
+        // TODO: add limit for slide based on pivot and have a forced move if necessary
         slide.setPower(x);
         telemetry.addData("set slide x 2", x);
     }
