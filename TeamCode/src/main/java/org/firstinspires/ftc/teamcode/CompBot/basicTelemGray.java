@@ -138,7 +138,7 @@ public class basicTelemGray extends LinearOpMode {
     /**
      * Initializes the robot.<br>
      * Starts all the devices and maps where they go
-     * As well as sets direction and whether motors run with encoders or not
+     * As well as whether motors run with encoders or not
      */
     public void initRobot() {
 
@@ -223,6 +223,7 @@ public class basicTelemGray extends LinearOpMode {
 
     /**
      * Converts standard cartesian coordinates to polar coordinates
+     * not used (yet)
      *
      * @param x X input
      * @param y Y input
@@ -245,6 +246,7 @@ public class basicTelemGray extends LinearOpMode {
 
     /**
      * Converts polar coordinates to cartesian
+     * not used (yet)
      *
      * @param r     Magnitude of input coordinate
      * @param theta Angle of input coordinate.<br>
@@ -265,7 +267,7 @@ public class basicTelemGray extends LinearOpMode {
 
 
     /**
-     * Moves the robot based on desired heading and power.<br>
+     * Moves the robot forward/backward based on desired power.<br>
      * Does not change the rotation of the robot at all
      *
      * @param power   Desired power to run the motors at
@@ -285,10 +287,10 @@ public class basicTelemGray extends LinearOpMode {
 
 
     /**
-     * Rotates the robot around a center point.<br>
+     * Rotates the robot around itself.<br>
      * Does not move the robot in any other direction.<br>
      *
-     * @param power Power to turn the robot at
+     * @param power Desired power to turn the robot at
      */
     public void rotate(double power) {
 
