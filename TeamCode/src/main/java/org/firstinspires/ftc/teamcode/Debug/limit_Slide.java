@@ -61,7 +61,7 @@ public class limit_Slide extends LinearOpMode {
         pivot.setDirection(DcMotorSimple.Direction.FORWARD);
 
         limitSlide = 4750;
-        limitPivot = 2500;
+        limitPivot = 3200;
 
         //servos
         intakeL = hardwareMap.get(Servo.class, "intake");
@@ -78,14 +78,15 @@ public class limit_Slide extends LinearOpMode {
     }
 
     public void initSlide() {
-        double i = -.005;
-        pivot.setPower(1);
+        double i = -0.75;
         while (limitSwitch.getState()) {
             pivot.setPower(i);
             telemetry.addData("pivot",pivot.getCurrentPosition());
             telemetry.addLine("initializing slide");
             telemetry.update();
         }
+        pivot.setPower(.00);
+        sleep(250);
         pivot.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         pivot.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         pivot.setPower(.00);
