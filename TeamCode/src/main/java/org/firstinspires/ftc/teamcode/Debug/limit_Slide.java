@@ -32,7 +32,7 @@ public class limit_Slide extends LinearOpMode {
 
             if (gamepad2.left_trigger >= 0.5) {
                 intakeL.setPosition(1);
-            } else  if (gamepad2.right_trigger >= 0.5){
+            } else if (gamepad2.right_trigger >= 0.5) {
                 intakeL.setPosition(0);
             }
 
@@ -81,7 +81,7 @@ public class limit_Slide extends LinearOpMode {
         double i = -0.75;
         while (limitSwitch.getState()) {
             pivot.setPower(i);
-            telemetry.addData("pivot",pivot.getCurrentPosition());
+            telemetry.addData("pivot", pivot.getCurrentPosition());
             telemetry.addLine("initializing slide");
             telemetry.update();
         }
@@ -100,13 +100,21 @@ public class limit_Slide extends LinearOpMode {
             x = 0;
         }
 
-        if (x > 1)
+        if (x > 1 && !(slide.getCurrentPosition() > slideLimit()))
             x = .5;
         if (x < -1)
             x = -.5;
         // TODO: add limit for slide based on pivot and have a forced move if necessary
         slide.setPower(x);
         telemetry.addData("set slide x 2", x);
+    }
+
+    public double slideLimit() {
+        double limit = 0;
+        double encoderCountsPerInch = 65; //needs adjusting
+        double slideLength = slide.getCurrentPosition() / encoderCountsPerInch;
+        limit = Math.toDegrees(Math.acos(46 / slideLength));
+        return limit;
     }
 
     public void setPivot(double x) {
