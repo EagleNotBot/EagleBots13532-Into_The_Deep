@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.CompBot;
+package org.firstinspires.ftc.teamcode.Class;
 
 import static com.qualcomm.robotcore.hardware.DcMotor.RunMode.RUN_USING_ENCODER;
 import static com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior.BRAKE;
@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.ODO.GoBildaPinpointDriver;
 public class basicTelemBlue extends LinearOpMode {
     /*
     The point of this code is to be a basic telem that works for the blue robot
-    date last updated and tested:
+    date last updated and tested: 11/5/24
     */
 
     DcMotor FLMotor, BLMotor, BRMotor, FRMotor, pivot, slide;
